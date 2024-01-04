@@ -2,7 +2,7 @@
 
 A Web Component for setting a website theme using a select element.
 
-**[Demo](https://chrisburnell.github.io/theme-selector/demo.html)** | **[Further reading](https://chrisburnell.com/article/web-component-theme-selector/)**
+**[Demo](https://chrisburnell.github.io/theme-selector/demo.html)** | **[Further reading](https://chrisburnell.com/theme-selector/)**
 
 ## Examples
 
