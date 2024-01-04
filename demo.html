@@ -9,6 +9,10 @@
     <script type="module" src="theme-selector.js"></script>
 </head>
 <body>
+    <h1><code>theme-selector</code> Demo</h1>
+
+    <p>Unfortunately, because most of these examples are manipulating data attributes against the root element, you may find conflicts when manipulating the different select fields. You can see the effect of each <code>theme-selector</code> by setting each of their values to the <em>Light / Black on White</em> and then toggling them individually back and forth.</p>
+
     <h2>General usage example</h2>
     <theme-selector>
         <select autocomplete="off">
@@ -103,6 +107,9 @@
         [data-theme="white-on-black"] {
             background-color: black;
             color: white;
+        }
+        p {
+            max-inline-size: clamp(21em, 100vi, 30em);
         }
     </style>
 </body>

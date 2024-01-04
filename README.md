@@ -141,3 +141,4 @@ Make sure you include the `<script>` in your project (choose one of these):
 With thanks to the following people:
 
 - [David Darnes](https://darn.es) for creating this [Web Component repo template](https://github.com/daviddarnes/component-template)
+- [Andy Bell](https://piccalil.li/) for writing the article, [Create a user controlled dark or light mode](https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode/), which served as the initial inspiration and basis for building my own theming setup and eventually became this Web Component
