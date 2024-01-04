@@ -13,19 +13,15 @@ General usage example:
 
 <theme-selector>
     <select autocomplete="off">
-        <optgroup label="Select a theme">
-            <option value="light">
-                Light
-            </option>
-            <option value="dark">
-                Dark
-            </option>
-            <option value="other">
-                Other
-            </option>
-        </optgroup>
+        <option value="light">
+            Light
+        </option>
+        <option value="dark">
+            Dark
+        </option>
     </select>
 </theme-selector>
+
 <style>
     theme-selector:not(:defined) {
         display: none;
@@ -48,6 +44,7 @@ Example using a custom storage key:
         </option>
     </select>
 </theme-selector>
+
 <style>
     theme-selector:not(:defined) {
         display: none;
@@ -70,6 +67,7 @@ Example using a custom dark theme key:
         </option>
     </select>
 </theme-selector>
+
 <style>
     theme-selector:not(:defined) {
         display: none;
@@ -92,6 +90,7 @@ Example with a custom transition class and duration to keep the class applied:
         </option>
     </select>
 </theme-selector>
+
 <style>
     theme-selector:not(:defined) {
         display: none;
@@ -114,6 +113,7 @@ Example targeting a specific element to apply the theme to:
         </option>
     </select>
 </theme-selector>
+
 <style>
     theme-selector:not(:defined) {
         display: none;
