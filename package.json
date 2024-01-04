@@ -1,7 +1,7 @@
 {
   "name": "@chrisburnell/theme-selector",
-  "version": "1.0.0",
-  "description": "A Web Component for setting a website theme using a select element.",
+  "version": "1.0.1",
+  "description": "A Web Component to set a site-wide theme preference using a native select element, saved to local storage.",
   "main": "theme-selector.js",
   "scripts": {
     "start": "npx http-server ."
