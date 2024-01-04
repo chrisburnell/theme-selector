@@ -70,6 +70,26 @@
 
     <hr />
 
+    <h2>Example with a custom transition class and duration to keep the class applied *</h2>
+    <p><em>* You will likely want this to be equal or be greater than any CSS transitions you have applied.</em></p>
+    <theme-selector data-transition-class="transitioning" data-transition-duration="250">
+        <select autocomplete="off">
+            <option value="light">
+                Light
+            </option>
+            <option value="dark">
+                Dark
+            </option>
+        </select>
+    </theme-selector>
+    <style>
+        theme-selector:not(:defined) {
+            display: none;
+        }
+    </style>
+
+    <hr />
+
     <h2>Example targeting a specific element to apply the theme to</h2>
     <theme-selector data-root-element=".content">
         <select autocomplete="off">
@@ -107,6 +127,10 @@
         [data-theme="white-on-black"] {
             background-color: black;
             color: white;
+        }
+        .theme-transitioning,
+        .transitioning {
+            transition: all 0.5s linear;
         }
         p {
             max-inline-size: clamp(21em, 100vi, 30em);

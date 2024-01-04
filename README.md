@@ -77,6 +77,28 @@ Example using a custom dark theme key:
 </style>
 ```
 
+Example with a custom transition class and duration to keep the class applied:
+
+```html
+<script type="module" src="theme-selector.js"></script>
+
+<theme-selector data-transition-class="transitioning" data-transition-duration="100">
+    <select autocomplete="off">
+        <option value="light">
+            Light
+        </option>
+        <option value="dark">
+            Dark
+        </option>
+    </select>
+</theme-selector>
+<style>
+    theme-selector:not(:defined) {
+        display: none;
+    }
+</style>
+```
+
 Example targeting a specific element to apply the theme to:
 
 ```html

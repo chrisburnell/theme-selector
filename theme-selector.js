@@ -12,7 +12,9 @@ class ThemeSelector extends HTMLElement {
 	connectedCallback() {
 		this.STORAGE_KEY = this.dataset.key || "theme"
 		this.DARK_THEME_KEY = this.dataset.darkTheme || "dark"
-		this.ROOT_ELEMENT = document.querySelector(this.dataset.rootElement) || document.documentElement
+		this.ROOT_ELEMENT = this.dataset.rootElement ? document.querySelector(this.dataset.rootElement) : document.documentElement
+		this.TRANSITION_CLASS = this.dataset.transitionClass || "theme-transitioning"
+		this.TRANSITION_DURATION = this.dataset.transitionDuration ? Number(this.dataset.transitionDuration) : 1000
 
 		this.theme = localStorage.getItem(this.STORAGE_KEY)
 
@@ -79,8 +81,14 @@ class ThemeSelector extends HTMLElement {
 			.filter((option) => option.selected)
 			.map((option) => option.value)[0]
 
+		this.ROOT_ELEMENT.classList.add(this.TRANSITION_CLASS)
+
 		this.setDataAttribute(this.theme)
 		localStorage.setItem(this.STORAGE_KEY, this.theme)
+
+		setTimeout(() => {
+			this.ROOT_ELEMENT.classList.remove(this.TRANSITION_CLASS)
+		}, this.TRANSITION_DURATION)
 	}
 }
 
