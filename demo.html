@@ -1,22 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Demo of theme-selector Web Component" />
     <title>theme-selector Web Component Demo</title>
 
     <script type="module" src="theme-selector.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <h2>General usage example</h2>
     <theme-selector>
-      <button>Button</button>
+        <select autocomplete="off">
+            <option value="light">
+                Light
+            </option>
+            <option value="dark">
+                Dark
+            </option>
+        </select>
     </theme-selector>
     <style>
-      theme-selector:not(:defined) {
-        display: none;
-      }
+        theme-selector:not(:defined) {
+            display: none;
+        }
     </style>
-  </body>
+
+    <hr />
+
+    <h2>Example using a custom storage key</h2>
+    <theme-selector data-key="color-scheme">
+        <select autocomplete="off">
+            <option value="light">
+                Light
+            </option>
+            <option value="dark">
+                Dark
+            </option>
+        </select>
+    </theme-selector>
+    <style>
+        theme-selector:not(:defined) {
+            display: none;
+        }
+    </style>
+
+    <hr />
+
+    <h2>Example using a custom dark theme key</h2>
+    <theme-selector data-dark-theme="white-on-black">
+        <select autocomplete="off">
+            <option value="black-on-white">
+                Black on White
+            </option>
+            <option value="white-on-black">
+                White on Black
+            </option>
+        </select>
+    </theme-selector>
+    <style>
+        theme-selector:not(:defined) {
+            display: none;
+        }
+    </style>
+
+    <hr />
+
+    <h2>Example targeting a specific element to apply the theme to</h2>
+    <theme-selector data-root-element=".content">
+        <select autocomplete="off">
+            <option value="light">
+                Light
+            </option>
+            <option value="dark">
+                Dark
+            </option>
+        </select>
+    </theme-selector>
+    <style>
+        theme-selector:not(:defined) {
+            display: none;
+        }
+    </style>
+    <p class="content" style="padding: 1em">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum suscipit id nulla vitae maximus. In bibendum risus in commodo fermentum. Vestibulum elementum turpis ac aliquam pulvinar. Nulla vitae varius lorem.</p>
+
+    <style>
+        body {
+            padding: 1em;
+        }
+        body > * + * {
+            margin-block-start: 1em;
+        }
+        :root,
+        [data-theme="light"],
+        [data-color-scheme="light"],
+        [data-theme="white-on-black"] {
+            background-color: white;
+            color: black;
+        }
+        [data-theme="dark"],
+        [data-color-scheme="dark"],
+        [data-theme="white-on-black"] {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</body>
 </html>

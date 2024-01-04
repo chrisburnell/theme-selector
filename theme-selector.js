@@ -11,7 +11,7 @@ class ThemeSelector extends HTMLElement {
 
 	connectedCallback() {
 		this.STORAGE_KEY = this.dataset.key || "theme"
-		this.DARK_THEME_KEY = this.dataset.darkThemeKey || "dark"
+		this.DARK_THEME_KEY = this.dataset.darkTheme || "dark"
 		this.ROOT_ELEMENT = document.querySelector(this.dataset.rootElement) || document.documentElement
 
 		this.theme = localStorage.getItem(this.STORAGE_KEY)

@@ -12,20 +12,96 @@ General usage example:
 <script type="module" src="theme-selector.js"></script>
 
 <theme-selector>
-  <button>Button</button>
+    <select autocomplete="off">
+        <optgroup label="Select a theme">
+            <option value="light">
+                Light
+            </option>
+            <option value="dark">
+                Dark
+            </option>
+            <option value="other">
+                Other
+            </option>
+        </optgroup>
+    </select>
 </theme-selector>
 <style>
-  theme-selector:not(:defined) {
-    display: none;
-  }
+    theme-selector:not(:defined) {
+        display: none;
+    }
+</style>
+```
+
+Example using a custom storage key:
+
+```html
+<script type="module" src="theme-selector.js"></script>
+
+<theme-selector data-key="color-scheme">
+    <select autocomplete="off">
+        <option value="light">
+            Light
+        </option>
+        <option value="dark">
+            Dark
+        </option>
+    </select>
+</theme-selector>
+<style>
+    theme-selector:not(:defined) {
+        display: none;
+    }
+</style>
+```
+
+Example using a custom dark theme key:
+
+```html
+<script type="module" src="theme-selector.js"></script>
+
+<theme-selector data-dark-theme="white-on-black">
+    <select autocomplete="off">
+        <option value="black-on-white">
+            Black on White
+        </option>
+        <option value="white-on-black">
+            White on Black
+        </option>
+    </select>
+</theme-selector>
+<style>
+    theme-selector:not(:defined) {
+        display: none;
+    }
+</style>
+```
+
+Example targeting a specific element to apply the theme to:
+
+```html
+<script type="module" src="theme-selector.js"></script>
+
+<theme-selector data-root-element=".content">
+    <select autocomplete="off">
+        <option value="light">
+            Light
+        </option>
+        <option value="dark">
+            Dark
+        </option>
+    </select>
+</theme-selector>
+<style>
+    theme-selector:not(:defined) {
+        display: none;
+    }
 </style>
 ```
 
 ## Features
 
-This Web Component allows you to: TODO
-
-- Check for… TODO
+This Web Component allows you to use a select element to control user-preferred theming across your website by setting a data attribute against the root element (or a defined selector query). Additionally saves the preference to local storage so that it can be applied on new page loads and maintained between user visits.
 
 ## Installation
 
